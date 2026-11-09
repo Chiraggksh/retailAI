@@ -1,0 +1,107 @@
+{
+  "notice": "Ground-truth retrieval relevance judgments for Northstar Retail policy search.",
+  "methodology": "Constructed by cross-referencing policy questions from evaluation_cases.json with the 22 ingested policy chunks in ChromaDB. Includes knowledge queries, multi-step scenarios, edge cases, and an out-of-domain negative query with no relevant documents to test zero-relevance handling.",
+  "cases": [
+    {
+      "id": "K01",
+      "category": "knowledge",
+      "query": "How many days does a customer have to return most physical items, and what date starts the window?",
+      "expected_doc_ids": ["POL-RET-001"],
+      "relevant_chunk_ids": [
+        "POL-RET-001_v1_2_p1_idx002_e006d94317"
+      ],
+      "rationale": "Specifies 30 calendar days return window starting from recorded delivery date."
+    },
+    {
+      "id": "K02",
+      "category": "knowledge",
+      "query": "How long can a standard domestic shipment take after dispatch?",
+      "expected_doc_ids": ["POL-SHIP-001"],
+      "relevant_chunk_ids": [
+        "POL-SHIP-001_v1_0_p1_idx003_38489dd429"
+      ],
+      "rationale": "States standard domestic delivery estimate is 3-7 business days after dispatch."
+    },
+    {
+      "id": "K03",
+      "category": "knowledge",
+      "query": "When should a refund appear after it is approved?",
+      "expected_doc_ids": ["POL-REF-001"],
+      "relevant_chunk_ids": [
+        "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+      ],
+      "rationale": "Explains bank posting timeline of 5-10 business days after approval."
+    },
+    {
+      "id": "M01",
+      "category": "multi_step",
+      "query": "I received this mouse and want to return it. What can you do?",
+      "expected_doc_ids": ["POL-RET-001"],
+      "relevant_chunk_ids": [
+        "POL-RET-001_v1_2_p1_idx002_e006d94317",
+        "POL-RET-001_v1_2_p1_idx003_42452b1000",
+        "POL-RET-001_v1_2_p1_idx005_0d68462fc1"
+      ],
+      "rationale": "Covers return window, resalable condition requirements, and ownership/order verification procedure."
+    },
+    {
+      "id": "M02",
+      "category": "multi_step",
+      "query": "Where is my refund?",
+      "expected_doc_ids": ["POL-REF-001"],
+      "relevant_chunk_ids": [
+        "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+        "POL-REF-001_v1_1_p1_idx005_57801e5a2f"
+      ],
+      "rationale": "Covers refund processing timeline and checking operational refund status."
+    },
+    {
+      "id": "E02",
+      "category": "exception",
+      "query": "Can I return this e-book?",
+      "expected_doc_ids": ["POL-RET-001"],
+      "relevant_chunk_ids": [
+        "POL-RET-001_v1_2_p1_idx004_51813952e8"
+      ],
+      "rationale": "Explicitly declares downloadable digital products and final-sale items non-returnable."
+    },
+    {
+      "id": "Q07",
+      "category": "shipping_tracking",
+      "query": "How do I track my package after dispatch?",
+      "expected_doc_ids": ["POL-SHIP-001"],
+      "relevant_chunk_ids": [
+        "POL-SHIP-001_v1_0_p1_idx004_16674ad377"
+      ],
+      "rationale": "Explains carrier tracking number assignment and tracking link availability."
+    },
+    {
+      "id": "Q08",
+      "category": "shipping_delayed",
+      "query": "What happens if my package does not arrive after 7 business days?",
+      "expected_doc_ids": ["POL-SHIP-001"],
+      "relevant_chunk_ids": [
+        "POL-SHIP-001_v1_0_p1_idx005_7f2c267689"
+      ],
+      "rationale": "Policy for delayed shipments after exceeding the 7 business day delivery estimate."
+    },
+    {
+      "id": "Q09",
+      "category": "refund_prereq",
+      "query": "Can I get a refund before returning the item?",
+      "expected_doc_ids": ["POL-REF-001"],
+      "relevant_chunk_ids": [
+        "POL-REF-001_v1_1_p1_idx002_54533efd1e"
+      ],
+      "rationale": "Mandates that a refund may only be initiated after an eligible return is received and inspected."
+    },
+    {
+      "id": "Q10",
+      "category": "negative_out_of_domain",
+      "query": "What is your pet policy and can I bring my dog to your store?",
+      "expected_doc_ids": [],
+      "relevant_chunk_ids": [],
+      "rationale": "Negative query testing zero-relevance handling; no retail pet policy exists."
+    }
+  ]
+}

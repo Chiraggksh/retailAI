@@ -1,0 +1,25 @@
+{
+  "notice": "Synthetic demo identities only; access codes are not real credentials.",
+  "customers": [
+    {
+      "customer_id": "C-001",
+      "display_name": "Customer One",
+      "access_code": "DEMO-001"
+    },
+    {
+      "customer_id": "C-002",
+      "display_name": "Customer Two",
+      "access_code": "DEMO-002"
+    },
+    {
+      "customer_id": "C-003",
+      "display_name": "Customer Three",
+      "access_code": "DEMO-003"
+    },
+    {
+      "customer_id": "C-004",
+      "display_name": "Customer Four",
+      "access_code": "DEMO-004"
+    }
+  ]
+}

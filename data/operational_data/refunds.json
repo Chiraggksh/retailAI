@@ -1,0 +1,13 @@
+{
+  "notice": "Synthetic operational records.",
+  "refunds": [
+    {
+      "refund_id": "RF-7001",
+      "order_id": "NS-1002",
+      "customer_id": "C-002",
+      "status": "approved",
+      "amount_inr": 2499,
+      "approved_date": "2026-09-25"
+    }
+  ]
+}

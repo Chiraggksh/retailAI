@@ -1,0 +1,7 @@
+order_id,customer_id,order_date,delivery_date,status,item_name,item_type,final_sale,condition_reported,amount_inr,payment_status,tracking_number,return_status
+NS-1001,C-001,2026-10-01,2026-10-05,delivered,Wireless Mouse,physical,False,unused,1299,paid,TRK-77881,none
+NS-1002,C-002,2026-09-01,2026-09-04,delivered,Desk Lamp,physical,False,unused,2499,paid,TRK-77882,none
+NS-1003,C-001,2026-10-20,,shipped,USB-C Hub,physical,False,unknown,1899,paid,,none
+NS-1004,C-003,2026-10-10,2026-10-12,delivered,E-book: Home Office Setup,digital,False,not_applicable,499,paid,,none
+NS-1005,C-004,2026-10-15,2026-10-17,delivered,Ceramic Mug Set,physical,True,unused,799,paid,TRK-77885,none
+NS-1006,C-002,2026-10-25,,processing,Keyboard,physical,False,unknown,3299,paid,,none

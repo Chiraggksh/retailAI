@@ -1,0 +1,737 @@
+{
+  "BM25": {
+    "method_name": "BM25",
+    "query_count": 10,
+    "mean_precision_at_3": 0.2,
+    "mean_recall_at_3": 0.5333,
+    "mean_mrr_at_3": 0.3833,
+    "mean_precision_at_5": 0.18,
+    "mean_recall_at_5": 0.7667,
+    "mean_mrr_at_5": 0.4283,
+    "mean_latency_ms": 0.15,
+    "top_1_accuracy": 0.3,
+    "per_query_results": [
+      {
+        "query_id": "K01",
+        "query_text": "How many days does a customer have to return most physical items, and what date starts the window?",
+        "category": "knowledge",
+        "relevant_chunks": [
+          "POL-RET-001_v1_2_p1_idx002_e006d94317"
+        ],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-RET-001_v1_2_p1_idx004_51813952e8",
+          "POL-RET-001_v1_2_p1_idx006_3211556885",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 0.3,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "K02",
+        "query_text": "How long can a standard domestic shipment take after dispatch?",
+        "category": "knowledge",
+        "relevant_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429"
+        ],
+        "retrieved_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429",
+          "POL-SHIP-001_v1_0_p1_idx002_01cd91f658",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-SHIP-001_v1_0_p1_idx001_807fa3d0fd"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 0.16,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "K03",
+        "query_text": "When should a refund appear after it is approved?",
+        "category": "knowledge",
+        "relevant_chunks": [
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+        ],
+        "retrieved_chunks": [
+          "POL-REF-001_v1_1_p1_idx003_bb39209954",
+          "POL-RET-001_v1_2_p1_idx001_10518c4c92",
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-REF-001_v1_1_p1_idx005_57801e5a2f"
+        ],
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "mrr_at_3": 0.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.25,
+        "latency_ms": 0.13,
+        "top_1_hit": false
+      },
+      {
+        "query_id": "M01",
+        "query_text": "I received this mouse and want to return it. What can you do?",
+        "category": "multi_step",
+        "relevant_chunks": [
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-RET-001_v1_2_p1_idx003_42452b1000",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1"
+        ],
+        "retrieved_chunks": [
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-RET-001_v1_2_p1_idx001_10518c4c92",
+          "POL-RET-001_v1_2_p1_idx006_3211556885",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 0.3333,
+        "mrr_at_3": 0.5,
+        "precision_at_5": 0.4,
+        "recall_at_5": 0.6667,
+        "mrr_at_5": 0.5,
+        "latency_ms": 0.17,
+        "top_1_hit": false
+      },
+      {
+        "query_id": "M02",
+        "query_text": "Where is my refund?",
+        "category": "multi_step",
+        "relevant_chunks": [
+          "POL-REF-001_v1_1_p1_idx005_57801e5a2f",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+        ],
+        "retrieved_chunks": [
+          "POL-REF-001_v1_1_p1_idx005_57801e5a2f",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-RET-001_v1_2_p1_idx006_3211556885",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954"
+        ],
+        "precision_at_3": 0.6667,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.4,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 0.07,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "E02",
+        "query_text": "Can I return this e-book?",
+        "category": "exception",
+        "relevant_chunks": [
+          "POL-RET-001_v1_2_p1_idx004_51813952e8"
+        ],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-REF-001_v1_1_p1_idx001_28788df590",
+          "POL-SHIP-001_v1_0_p1_idx001_807fa3d0fd",
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e"
+        ],
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "mrr_at_3": 0.0,
+        "precision_at_5": 0.0,
+        "recall_at_5": 0.0,
+        "mrr_at_5": 0.0,
+        "latency_ms": 0.08,
+        "top_1_hit": false
+      },
+      {
+        "query_id": "Q07",
+        "query_text": "How do I track my package after dispatch?",
+        "category": "shipping_tracking",
+        "relevant_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx004_16674ad377"
+        ],
+        "retrieved_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429",
+          "POL-SHIP-001_v1_0_p1_idx002_01cd91f658",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-SHIP-001_v1_0_p1_idx005_7f2c267689",
+          "POL-SHIP-001_v1_0_p1_idx004_16674ad377"
+        ],
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "mrr_at_3": 0.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.2,
+        "latency_ms": 0.11,
+        "top_1_hit": false
+      },
+      {
+        "query_id": "Q08",
+        "query_text": "What happens if my package does not arrive after 7 business days?",
+        "category": "shipping_delayed",
+        "relevant_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx005_7f2c267689"
+        ],
+        "retrieved_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429",
+          "POL-RET-001_v1_2_p1_idx004_51813952e8",
+          "POL-RET-001_v1_2_p1_idx006_3211556885",
+          "POL-SHIP-001_v1_0_p1_idx002_01cd91f658",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+        ],
+        "precision_at_3": 0.0,
+        "recall_at_3": 0.0,
+        "mrr_at_3": 0.0,
+        "precision_at_5": 0.0,
+        "recall_at_5": 0.0,
+        "mrr_at_5": 0.0,
+        "latency_ms": 0.15,
+        "top_1_hit": false
+      },
+      {
+        "query_id": "Q09",
+        "query_text": "Can I get a refund before returning the item?",
+        "category": "refund_prereq",
+        "relevant_chunks": [
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e"
+        ],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-REF-001_v1_1_p1_idx005_57801e5a2f",
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 0.3333,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.3333,
+        "latency_ms": 0.13,
+        "top_1_hit": false
+      },
+      {
+        "query_id": "Q10",
+        "query_text": "What is your pet policy and can I bring my dog to your store?",
+        "category": "negative_out_of_domain",
+        "relevant_chunks": [],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx001_10518c4c92",
+          "POL-RET-001_v1_2_p1_idx006_3211556885",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1"
+        ],
+        "precision_at_3": 0.0,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 0.0,
+        "precision_at_5": 0.0,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.0,
+        "latency_ms": 0.18,
+        "top_1_hit": false
+      }
+    ]
+  },
+  "Dense": {
+    "method_name": "Dense (all-MiniLM-L6-v2)",
+    "query_count": 10,
+    "mean_precision_at_3": 0.3333,
+    "mean_recall_at_3": 0.9167,
+    "mean_mrr_at_3": 0.7833,
+    "mean_precision_at_5": 0.22,
+    "mean_recall_at_5": 0.9667,
+    "mean_mrr_at_5": 0.7833,
+    "mean_latency_ms": 14.49,
+    "top_1_accuracy": 0.7,
+    "per_query_results": [
+      {
+        "query_id": "K01",
+        "query_text": "How many days does a customer have to return most physical items, and what date starts the window?",
+        "category": "knowledge",
+        "relevant_chunks": [
+          "POL-RET-001_v1_2_p1_idx002_e006d94317"
+        ],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-RET-001_v1_2_p1_idx004_51813952e8",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-RET-001_v1_2_p1_idx001_10518c4c92"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 32.99,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "K02",
+        "query_text": "How long can a standard domestic shipment take after dispatch?",
+        "category": "knowledge",
+        "relevant_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429"
+        ],
+        "retrieved_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429",
+          "POL-SHIP-001_v1_0_p1_idx002_01cd91f658",
+          "POL-SHIP-001_v1_0_p1_idx005_7f2c267689",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 11.04,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "K03",
+        "query_text": "When should a refund appear after it is approved?",
+        "category": "knowledge",
+        "relevant_chunks": [
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+        ],
+        "retrieved_chunks": [
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954",
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-REF-001_v1_1_p1_idx005_57801e5a2f"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 13.98,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "M01",
+        "query_text": "I received this mouse and want to return it. What can you do?",
+        "category": "multi_step",
+        "relevant_chunks": [
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-RET-001_v1_2_p1_idx003_42452b1000",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1"
+        ],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-RET-001_v1_2_p1_idx004_51813952e8"
+        ],
+        "precision_at_3": 0.6667,
+        "recall_at_3": 0.6667,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.4,
+        "recall_at_5": 0.6667,
+        "mrr_at_5": 1.0,
+        "latency_ms": 17.2,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "M02",
+        "query_text": "Where is my refund?",
+        "category": "multi_step",
+        "relevant_chunks": [
+          "POL-REF-001_v1_1_p1_idx005_57801e5a2f",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+        ],
+        "retrieved_chunks": [
+          "POL-REF-001_v1_1_p1_idx003_bb39209954",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-REF-001_v1_1_p1_idx005_57801e5a2f",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 0.5,
+        "mrr_at_3": 0.5,
+        "precision_at_5": 0.4,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.5,
+        "latency_ms": 14.57,
+        "top_1_hit": false
+      },
+      {
+        "query_id": "E02",
+        "query_text": "Can I return this e-book?",
+        "category": "exception",
+        "relevant_chunks": [
+          "POL-RET-001_v1_2_p1_idx004_51813952e8"
+        ],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx004_51813952e8",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954",
+          "POL-REF-001_v1_1_p1_idx001_28788df590"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 10.68,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "Q07",
+        "query_text": "How do I track my package after dispatch?",
+        "category": "shipping_tracking",
+        "relevant_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx004_16674ad377"
+        ],
+        "retrieved_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429",
+          "POL-SHIP-001_v1_0_p1_idx002_01cd91f658",
+          "POL-SHIP-001_v1_0_p1_idx004_16674ad377",
+          "POL-SHIP-001_v1_0_p1_idx005_7f2c267689",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 0.3333,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.3333,
+        "latency_ms": 10.93,
+        "top_1_hit": false
+      },
+      {
+        "query_id": "Q08",
+        "query_text": "What happens if my package does not arrive after 7 business days?",
+        "category": "shipping_delayed",
+        "relevant_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx005_7f2c267689"
+        ],
+        "retrieved_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx005_7f2c267689",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429",
+          "POL-SHIP-001_v1_0_p1_idx002_01cd91f658",
+          "POL-RET-001_v1_2_p1_idx006_3211556885"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 11.17,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "Q09",
+        "query_text": "Can I get a refund before returning the item?",
+        "category": "refund_prereq",
+        "relevant_chunks": [
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e"
+        ],
+        "retrieved_chunks": [
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-RET-001_v1_2_p1_idx004_51813952e8",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 10.97,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "Q10",
+        "query_text": "What is your pet policy and can I bring my dog to your store?",
+        "category": "negative_out_of_domain",
+        "relevant_chunks": [],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx001_10518c4c92",
+          "POL-REF-001_v1_1_p1_idx001_28788df590",
+          "POL-SHIP-001_v1_0_p1_idx001_807fa3d0fd",
+          "POL-RET-001_v1_2_p1_idx003_42452b1000",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317"
+        ],
+        "precision_at_3": 0.0,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 0.0,
+        "precision_at_5": 0.0,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.0,
+        "latency_ms": 11.41,
+        "top_1_hit": false
+      }
+    ]
+  },
+  "Dense + CrossEncoder": {
+    "method_name": "Dense + CrossEncoder (ms-marco)",
+    "query_count": 10,
+    "mean_precision_at_3": 0.3333,
+    "mean_recall_at_3": 0.9167,
+    "mean_mrr_at_3": 0.7833,
+    "mean_precision_at_5": 0.22,
+    "mean_recall_at_5": 0.9667,
+    "mean_mrr_at_5": 0.7833,
+    "mean_latency_ms": 103.38,
+    "top_1_accuracy": 0.7,
+    "per_query_results": [
+      {
+        "query_id": "K01",
+        "query_text": "How many days does a customer have to return most physical items, and what date starts the window?",
+        "category": "knowledge",
+        "relevant_chunks": [
+          "POL-RET-001_v1_2_p1_idx002_e006d94317"
+        ],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-SHIP-001_v1_0_p1_idx002_01cd91f658",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 217.4,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "K02",
+        "query_text": "How long can a standard domestic shipment take after dispatch?",
+        "category": "knowledge",
+        "relevant_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429"
+        ],
+        "retrieved_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429",
+          "POL-SHIP-001_v1_0_p1_idx002_01cd91f658",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-SHIP-001_v1_0_p1_idx005_7f2c267689"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 102.63,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "K03",
+        "query_text": "When should a refund appear after it is approved?",
+        "category": "knowledge",
+        "relevant_chunks": [
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+        ],
+        "retrieved_chunks": [
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954",
+          "POL-REF-001_v1_1_p1_idx005_57801e5a2f",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 0.5,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.5,
+        "latency_ms": 86.79,
+        "top_1_hit": false
+      },
+      {
+        "query_id": "M01",
+        "query_text": "I received this mouse and want to return it. What can you do?",
+        "category": "multi_step",
+        "relevant_chunks": [
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-RET-001_v1_2_p1_idx003_42452b1000",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1"
+        ],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-RET-001_v1_2_p1_idx004_51813952e8",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954"
+        ],
+        "precision_at_3": 0.6667,
+        "recall_at_3": 0.6667,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.4,
+        "recall_at_5": 0.6667,
+        "mrr_at_5": 1.0,
+        "latency_ms": 91.29,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "M02",
+        "query_text": "Where is my refund?",
+        "category": "multi_step",
+        "relevant_chunks": [
+          "POL-REF-001_v1_1_p1_idx005_57801e5a2f",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7"
+        ],
+        "retrieved_chunks": [
+          "POL-REF-001_v1_1_p1_idx003_bb39209954",
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-REF-001_v1_1_p1_idx004_3d1665d1f7",
+          "POL-REF-001_v1_1_p1_idx005_57801e5a2f",
+          "POL-REF-001_v1_1_p1_idx001_28788df590"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 0.5,
+        "mrr_at_3": 0.3333,
+        "precision_at_5": 0.4,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.3333,
+        "latency_ms": 80.32,
+        "top_1_hit": false
+      },
+      {
+        "query_id": "E02",
+        "query_text": "Can I return this e-book?",
+        "category": "exception",
+        "relevant_chunks": [
+          "POL-RET-001_v1_2_p1_idx004_51813952e8"
+        ],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx004_51813952e8",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-RET-001_v1_2_p1_idx001_10518c4c92",
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 95.08,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "Q07",
+        "query_text": "How do I track my package after dispatch?",
+        "category": "shipping_tracking",
+        "relevant_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx004_16674ad377"
+        ],
+        "retrieved_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx004_16674ad377",
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429",
+          "POL-SHIP-001_v1_0_p1_idx002_01cd91f658",
+          "POL-SHIP-001_v1_0_p1_idx005_7f2c267689",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 83.36,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "Q08",
+        "query_text": "What happens if my package does not arrive after 7 business days?",
+        "category": "shipping_delayed",
+        "relevant_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx005_7f2c267689"
+        ],
+        "retrieved_chunks": [
+          "POL-SHIP-001_v1_0_p1_idx005_7f2c267689",
+          "POL-SHIP-001_v1_0_p1_idx003_38489dd429",
+          "POL-SHIP-001_v1_0_p1_idx002_01cd91f658",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-RET-001_v1_2_p1_idx006_3211556885"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 87.59,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "Q09",
+        "query_text": "Can I get a refund before returning the item?",
+        "category": "refund_prereq",
+        "relevant_chunks": [
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e"
+        ],
+        "retrieved_chunks": [
+          "POL-REF-001_v1_1_p1_idx002_54533efd1e",
+          "POL-RET-001_v1_2_p1_idx005_0d68462fc1",
+          "POL-RET-001_v1_2_p1_idx004_51813952e8",
+          "POL-RET-001_v1_2_p1_idx002_e006d94317",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954"
+        ],
+        "precision_at_3": 0.3333,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 1.0,
+        "latency_ms": 84.34,
+        "top_1_hit": true
+      },
+      {
+        "query_id": "Q10",
+        "query_text": "What is your pet policy and can I bring my dog to your store?",
+        "category": "negative_out_of_domain",
+        "relevant_chunks": [],
+        "retrieved_chunks": [
+          "POL-RET-001_v1_2_p1_idx001_10518c4c92",
+          "POL-REF-001_v1_1_p1_idx001_28788df590",
+          "POL-SHIP-001_v1_0_p1_idx001_807fa3d0fd",
+          "POL-REF-001_v1_1_p1_idx003_bb39209954",
+          "POL-RET-001_v1_2_p1_idx003_42452b1000"
+        ],
+        "precision_at_3": 0.0,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 0.0,
+        "precision_at_5": 0.0,
+        "recall_at_5": 1.0,
+        "mrr_at_5": 0.0,
+        "latency_ms": 105.03,
+        "top_1_hit": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "dataset_name": "Northstar Retail Support Synthetic Dataset",
+  "dataset_version": "1.0",
+  "created_for": "Agentic AI Engineering one-week practical assignment",
+  "license_and_provenance": "All records and policy text in this package are synthetic and created for educational use. No real customer data or merchant policy is included.",
+  "formats": [
+    "PDF policy documents",
+    "CSV orders table",
+    "JSON customers, returns, refunds and evaluation cases"
+  ],
+  "documents": [
+    {
+      "file": "documents/returns_policy.pdf",
+      "document_id": "POL-RET-001",
+      "version": "1.2",
+      "topic": "returns"
+    },
+    {
+      "file": "documents/shipping_policy.pdf",
+      "document_id": "POL-SHIP-001",
+      "version": "1.0",
+      "topic": "shipping"
+    },
+    {
+      "file": "documents/refund_policy.pdf",
+      "document_id": "POL-REF-001",
+      "version": "1.1",
+      "topic": "refunds"
+    }
+  ],
+  "operational_data": [
+    "operational_data/orders.csv",
+    "operational_data/customers.json",
+    "operational_data/returns.json",
+    "operational_data/refunds.json"
+  ],
+  "evaluation_data": [
+    "evaluation/evaluation_cases.json"
+  ],
+  "important_implementation_notes": [
+    "Use customer_id as the authenticated caller identity in this local demo; do not trust a customer_id supplied freely in a natural-language prompt.",
+    "Validate order ownership in every order-related tool before returning order details.",
+    "Do not implement a real payment or shipping integration.",
+    "Treat create-return as a state-changing operation: require explicit user confirmation and validate eligibility again on the server side.",
+    "Keep synthetic data clearly labeled in the UI, logs and README."
+  ]
+}

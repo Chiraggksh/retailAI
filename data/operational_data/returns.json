@@ -1,0 +1,21 @@
+{
+  "notice": "Synthetic operational records.",
+  "returns": [
+    {
+      "return_id": "RET-9001",
+      "order_id": "NS-1002",
+      "customer_id": "C-002",
+      "status": "received",
+      "inspection": "pending",
+      "created_at": "2026-09-20"
+    },
+    {
+      "return_id": "RET-9002",
+      "order_id": "NS-1001",
+      "customer_id": "C-001",
+      "status": "requested",
+      "inspection": "not_started",
+      "created_at": "2026-10-25"
+    }
+  ]
+}

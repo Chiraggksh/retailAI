@@ -1,0 +1,109 @@
+{
+  "notice": "Synthetic evaluation set. Expected outcomes are grading aids, not ground-truth production policy.",
+  "cases": [
+    {
+      "id": "K01",
+      "type": "knowledge",
+      "question": "How many days does a customer have to return most physical items, and what date starts the window?",
+      "expected_sources": [
+        "POL-RET-001"
+      ],
+      "expected_facts": [
+        "30 calendar days",
+        "delivery date"
+      ],
+      "expected_behavior": "Answer with policy citation."
+    },
+    {
+      "id": "K02",
+      "type": "knowledge",
+      "question": "How long can a standard domestic shipment take after dispatch?",
+      "expected_sources": [
+        "POL-SHIP-001"
+      ],
+      "expected_facts": [
+        "3\u20137 business days",
+        "estimate, not guarantee"
+      ],
+      "expected_behavior": "Answer with policy citation and avoid promising a date."
+    },
+    {
+      "id": "K03",
+      "type": "knowledge",
+      "question": "When should a refund appear after it is approved?",
+      "expected_sources": [
+        "POL-REF-001"
+      ],
+      "expected_facts": [
+        "5\u201310 business days",
+        "original payment method"
+      ],
+      "expected_behavior": "Distinguish approval from bank posting."
+    },
+    {
+      "id": "M01",
+      "type": "multi_step",
+      "customer_id": "C-001",
+      "order_id": "NS-1001",
+      "question": "I received this mouse and want to return it. What can you do?",
+      "expected_sources": [
+        "POL-RET-001"
+      ],
+      "expected_tools": [
+        "get_order_details",
+        "check_return_eligibility"
+      ],
+      "expected_behavior": "Verify ownership, delivered status, delivery date, final-sale and item type; then explain eligibility. Creating a request should require a separate explicit confirmation."
+    },
+    {
+      "id": "M02",
+      "type": "multi_step",
+      "customer_id": "C-002",
+      "order_id": "NS-1002",
+      "question": "Where is my refund?",
+      "expected_sources": [
+        "POL-REF-001"
+      ],
+      "expected_tools": [
+        "get_order_details",
+        "get_refund_status"
+      ],
+      "expected_behavior": "Report recorded refund status and 5\u201310 business-day policy window without claiming live bank status."
+    },
+    {
+      "id": "E01",
+      "type": "exception",
+      "customer_id": "C-001",
+      "order_id": "NS-1002",
+      "question": "Please return this order for me.",
+      "expected_behavior": "Reject or block because order belongs to another customer; do not disclose details."
+    },
+    {
+      "id": "E02",
+      "type": "exception",
+      "customer_id": "C-003",
+      "order_id": "NS-1004",
+      "question": "Can I return this e-book?",
+      "expected_sources": [
+        "POL-RET-001"
+      ],
+      "expected_behavior": "Explain digital products are not eligible for standard returns."
+    },
+    {
+      "id": "E03",
+      "type": "exception",
+      "customer_id": "C-001",
+      "order_id": "NS-9999",
+      "question": "I want to return this order.",
+      "expected_behavior": "Handle missing order safely; no hallucinated order details."
+    },
+    {
+      "id": "E04",
+      "type": "exception",
+      "customer_id": "C-001",
+      "order_id": "NS-1003",
+      "question": "I want to return this USB-C hub.",
+      "expected_behavior": "Do not approve; order is not delivered and delivery date is missing."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Environment credentials (never commit secrets)
+.env
+
+
+# Python virtual environment & cache
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+
+# Local databases and runtime state
+data/chroma_db/
