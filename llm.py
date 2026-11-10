@@ -27,7 +27,8 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_GEMINI_MODEL = "gemini-3.1-flash-lite"
+DEFAULT_GEMINI_MODEL = "gemini-3.5-flash-lite"
+FALLBACK_GEMINI_MODELS = ["gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-3.1-flash-lite"]
 
 
 class GeminiConfigurationError(Exception):
@@ -149,8 +150,31 @@ class GeminiClient:
                 config=config,
             )
         except APIError as e:
-            logger.error(f"Gemini API error ({e.code}): {e.message}")
-            raise
+            # On 503 (high demand), try fallback models before giving up
+            if e.code == 503:
+                logger.warning(f"Model '{self.model}' returned 503 (high demand). Trying fallback models...")
+                from llm import FALLBACK_GEMINI_MODELS
+                for fallback in FALLBACK_GEMINI_MODELS:
+                    if fallback == self.model:
+                        continue
+                    try:
+                        logger.info(f"Attempting fallback to '{fallback}'...")
+                        raw_response = client.models.generate_content(
+                            model=fallback,
+                            contents=contents,
+                            config=config,
+                        )
+                        logger.info(f"Fallback to '{fallback}' succeeded.")
+                        break
+                    except APIError as fe:
+                        logger.warning(f"Fallback model '{fallback}' failed: {fe.code}")
+                        continue
+                else:
+                    logger.error(f"All fallback models exhausted. Original error: {e.code}: {e.message}")
+                    raise
+            else:
+                logger.error(f"Gemini API error ({e.code}): {e.message}")
+                raise
         except Exception as e:
             logger.error(f"Error calling Gemini generate_content: {e}")
             raise
