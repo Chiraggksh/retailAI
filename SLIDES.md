@@ -34,7 +34,7 @@ Northstar's customer support team handles hundreds of daily queries about:
 ### Phase 1: Data Ingestion
 
 ```
-Policy PDF (50 pages)          Operational Database
+Policy PDF (3 pdfs)         Operational Databases (interrelated)
         │                              │
    PyMuPDF                    JSON/CSV Loaders
    (font size + bold           (customers, orders,
@@ -60,6 +60,10 @@ Policy PDF (50 pages)          Operational Database
 - **Local Embeddings**: `all-MiniLM-L6-v2` runs entirely on CPU — zero API cost, offline-capable
 - **ChromaDB persistence**: `./data/chroma_db/` survives restarts; no re-ingestion needed
 
+ingestion workflow: manifest.json for metadata association, structured pdf extract page by page and paragraph wise chunking chroma db used for version replacement, in operational never dumped to vector store isolated for secured, id shape retrieval
+
+limitations: detects only font size, bold, line length and not images
+             retrieval matching may miss lexical matching like exact serial number skucode etc hence hybrid retrieval can be used
 ---
 
 ## Slide 3 — Hybrid Retrieval & Benchmark Results
@@ -70,25 +74,18 @@ Policy PDF (50 pages)          Operational Database
 
 | Method | Mechanism | Strength |
 |---|---|---|
-| **Dense (MiniLM)** | Cosine similarity on 384-dim vectors | Semantic meaning, paraphrase matching |
 | **BM25** | TF-IDF keyword scoring | Exact terms, product codes, SKU numbers |
-| **RRF Hybrid** | Reciprocal Rank Fusion (k=60) | Best of both — combined ranked list |
+| **Dense vector** | Cosine similarity on 384-dim vectors | Semantic meaning, paraphrase matching |
+| **Cross encoder reranking** | reranking generated embeddings | Cross-encoder ms marco minilm-l6-v2 via sentence transformer ..query chunk tests attention pairs, assign logits and relevance score, sort descending and then rerank top k|
 
-**Reciprocal Rank Fusion Formula**
+evaluation cases: 10 questions -> ground truth relevance (identify which chunk should be retrieved)-> benchmark
 
-$$\text{RRF}(d) = \sum_{r \in R} \frac{1}{k + \text{rank}_r(d)}, \quad k = 60$$
+**Benchmark Results** — 10 labeled policy queries
+vector search outperformed top 1 accuracy coming 70% in vector and 30% in bm25
+dense and reranking method no such difference just latency increased..bm25 fast but less accurate
 
-**Benchmark Results** — 12 labeled policy queries
-
-| Metric | Dense | BM25 | **RRF Hybrid** |
-|---|---|---|---|
-| MRR | 1.0 | 0.98 | **1.0** |
-| NDCG@3 | 1.0 | 0.97 | **1.0** |
-| Hit Rate@5 | 100% | 100% | **100%** |
-| Avg Latency | ~18ms | ~2ms | ~20ms |
-
-> **Winner**: RRF Hybrid. MRR=1.0 and NDCG@3=1.0 — every relevant chunk ranked first across all 12 queries.
-
+> **Conclusion**: vector search best for low latency single staged customer support, but optional fallback can be reranking when confidence is below threshold
+also exact matchdone better by bm25 else mainly by vector store or we can use hybrid RRF (reciprocal rank fusion) unify both
 ---
 
 ## Slide 4 — Stateful Agent Architecture
@@ -217,9 +214,8 @@ if order.customer_id != trusted_caller:
 | Decision | Chosen Approach | Tradeoff |
 |---|---|---|
 | **Embeddings** | Local CPU (MiniLM) | Zero cost, offline ✅ vs. slower than GPU |
-| **Vector DB** | ChromaDB (local file) | Easy setup ✅ vs. not horizontally scalable |
+| **Vector DB** | ChromaDB (local file) | Easy setup,lightweight,idempotent upsert ✅ vs. not horizontally scalable |
 | **LLM** | Gemini 3.5 Flash Lite | Fast + cheap ✅ vs. smaller context window |
-| **Retrieval** | RRF Hybrid | Best accuracy ✅ vs. +20ms latency over BM25-only |
 | **Tool Protocol** | Official MCP SDK | Standardized ✅ vs. heavier than raw HTTP |
 | **Auth** | Env-var identity | Prompt-injection-safe ✅ vs. not production-grade JWT |
 
@@ -233,7 +229,6 @@ if order.customer_id != trusted_caller:
 | Gemini LLM call | ~500–2000ms | Network-bound |
 | **Total (typical)** | **~800ms** | End-to-end wall time |
 
-Tokens per query: ~400 prompt + ~150 completion = ~\$0.00005 at Flash Lite pricing
 
 ### Production Roadmap
 
@@ -255,4 +250,3 @@ CLI + Streamlit    →     React frontend     →    Mobile app
 ---
 
 *Northstar Retail AI — Built with Python 3.12, ChromaDB, MiniLM, Gemini, MCP, Streamlit*  
-*All 4 phases complete · 40/40 tests passing · MRR=1.0 · NDCG@3=1.0*
